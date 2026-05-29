@@ -213,7 +213,7 @@
               <h3>{{ .headline }}</h3>
               <p>{{ .note }}</p>
               {{ with .ctaEmail }}
-                <a class="btn-primary" href="mailto:{{ . }}?subject={{ $workshop.registration.ctaSubject | urlquery }}">{{ $workshop.registration.ctaLabel }}</a>
+                <a class="btn-primary contact-email" data-email="{{ . | base64Encode }}" data-subject="{{ $workshop.registration.ctaSubject | urlquery }}" data-keep-text="1" href="#">{{ $workshop.registration.ctaLabel }}</a>
               {{ end }}
             </div>
           {{ end }}
@@ -314,7 +314,7 @@
           <address class="contact-card">
             <strong>{{ $workshop.contactName }}</strong>
             <span>{{ $workshop.contactTitle }}</span>
-            <a href="mailto:{{ $workshop.contactEmail }}">{{ $workshop.contactEmail }}</a>
+            <a class="contact-email" data-email="{{ $workshop.contactEmail | base64Encode }}" href="#">Email the organizer</a>
           </address>
         </div>
       </section>

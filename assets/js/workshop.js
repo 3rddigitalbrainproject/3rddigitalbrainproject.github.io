@@ -19,6 +19,15 @@ if (backToTop) {
   });
 }
 
+document.querySelectorAll(".contact-email[data-email]").forEach((el) => {
+  const addr = atob(el.getAttribute("data-email"));
+  let href = "mailto:" + addr;
+  const subject = el.getAttribute("data-subject");
+  if (subject) href += "?subject=" + subject;
+  el.setAttribute("href", href);
+  if (!el.dataset.keepText) el.textContent = addr;
+});
+
 if (menuToggle && siteNav) {
   menuToggle.addEventListener("click", () => {
     const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
