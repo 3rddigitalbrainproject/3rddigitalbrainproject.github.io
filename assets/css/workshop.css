@@ -412,6 +412,12 @@ img {
   text-transform: uppercase;
 }
 
+.status-badge.status-open {
+  border-color: rgba(25, 135, 84, 0.3);
+  background: #e7f6ee;
+  color: #136c41;
+}
+
 .status-deadline {
   color: var(--muted);
   font-size: 0.92rem;

@@ -207,13 +207,15 @@
           {{ with $workshop.registration }}
             <div class="registration-panel">
               <div class="registration-status">
-                <span class="status-badge">{{ .status }}</span>
+                <span class="status-badge{{ if .formUrl }} status-open{{ end }}">{{ .status }}</span>
                 {{ with .deadline }}<span class="status-deadline">Deadline: {{ . }}</span>{{ end }}
               </div>
               <h3>{{ .headline }}</h3>
               <p>{{ .note }}</p>
-              {{ with .ctaEmail }}
-                <a class="btn-primary contact-email" data-email="{{ . | base64Encode }}" data-subject="{{ $workshop.registration.ctaSubject | urlquery }}" data-keep-text="1" href="#">{{ $workshop.registration.ctaLabel }}</a>
+              {{ if .formUrl }}
+                <a class="btn-primary" href="{{ .formUrl }}" target="_blank" rel="noopener noreferrer">{{ .ctaLabel }}</a>
+              {{ else if .ctaEmail }}
+                <a class="btn-primary contact-email" data-email="{{ .ctaEmail | base64Encode }}" data-subject="{{ .ctaSubject | urlquery }}" data-keep-text="1" href="#">{{ .ctaLabel }}</a>
               {{ end }}
             </div>
           {{ end }}

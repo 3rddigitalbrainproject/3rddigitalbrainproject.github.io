@@ -191,13 +191,12 @@ program:
         type: "tbd"
 
 registration:
-  status: "Opening Soon"
+  status: "Open"
   deadline: "To be announced"
-  headline: "Online registration will open soon"
-  note: "Details on registration, reception fees, lunch box orders, and poster submission will be announced on this page. Leave us your email and we will let you know the moment registration opens."
-  ctaLabel: "Email us to be notified"
-  ctaEmail: "z.sun.kc@juntendo.ac.jp"
-  ctaSubject: "3rd Digital Brain Workshop 2026 — Notify me when registration opens"
+  headline: "Registration is now open"
+  note: "Please complete the registration form. Registration is mandatory for all participants and poster presenters. Your registration details and all future announcements will be sent to the email address you provide on the form."
+  ctaLabel: "Register Now"
+  formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSddK2SgBt7LtqX3oZdYEknzpkral22meV5K4hmNhki6qwiS1A/viewform"
 
 fees:
   - title: "Workshop Registration"
