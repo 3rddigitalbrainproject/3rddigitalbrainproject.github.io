@@ -314,7 +314,9 @@
           <address class="contact-card">
             <strong>{{ $workshop.contactName }}</strong>
             <span>{{ $workshop.contactTitle }}</span>
-            <a class="contact-email" data-email="{{ $workshop.contactEmail | base64Encode }}" href="#">Email the organizer</a>
+            {{ with resources.Get "contact-email.png" }}
+              <img class="email-image" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="Email address of the workshop organizer" loading="lazy">
+            {{ end }}
           </address>
         </div>
       </section>
